@@ -1,0 +1,38 @@
+######################
+### What is it ??? ###
+######################
+
+bb-mdstat.sh is a Linux software RAID monitoring plugin for Hoobitmon/Xymon (http://hobbitmon.sourceforge.net/)
+It's fully GPL, so you can do whatever you want with, but it will keep GPL for ever.
+
+#####################################
+### What are the pre-requisites ? ###
+#####################################
+
+You first need to have a Hobbitmon/Xymon server running. This script is client-side script, so it must be installed by a Hobbitmon/Xymon client.
+It uses tools provided for using Linux software RAID (Multi-Devices).
+
+###########################
+### How does it works ? ###
+###########################
+
+The script check for RAID arrays health and reports results to Hobbitmon/Xymon server. According to the results, it'll tell monitoring server if the RAID arrays are healthy, faulty...
+
+#########################################################
+### How could I check activity ? ###
+#########################################################
+
+There is a debug mode included, first, you need to edit bb-mdstat.sh, and define the following regarding to your configuration :
+        AWK=/bin/awk         
+        CAT=/bin/cat         
+        DATE=/bin/date       
+        GREP=/bin/grep       
+        HEAD=/bin/head       
+        RM=/bin/rm           
+        TAIL=/bin/tail       
+        SED=/bin/sed         
+The default values are correct on a Debian system.
+Then, you juste have to run :
+bbmdstat.sh debug
+
+And you'll have the reports sent to monitoring server.
